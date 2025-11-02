@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千岛API</title>
+    <style>
+        /* --- 全局样式 --- */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background-color: #f0f2f5; /* 类似示例的淡灰色背景 */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- 卡片基础样式 --- */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e8e8e8;
+        }
+
+        /* --- 第一段：胶囊标题 --- */
+        .title-capsule {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* 渐变色 */
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 50px; /* 胶囊形状 */
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+        }
+
+        .title-capsule .icon {
+            width: 36px;
+            height: 36px;
+            margin-right: 15px;
+            border-radius: 50%; /* 圆形图标 */
+            background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title-capsule .icon img {
+            width: 24px; /* 图标大小 */
+            height: 24px;
+        }
+
+        /* --- 第二段：QQ群组 --- */
+        .qq-group-list a {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            border-radius: 25px; /* 胶囊按钮 */
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .qq-group-list a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .qq-group-list a:last-child {
+            margin-bottom: 0;
+        }
+
+        .qq-group-list .group-1 { background: linear-gradient(to right, #5b86e5, #36d1dc); }
+        .qq-group-list .group-2 { background: linear-gradient(to right, #9942f5, #6300c4); }
+
+        .qq-group-list .qq-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .card .small-text {
+            font-size: 14px;
+            color: #888;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .card .small-text p {
+            margin: 8px 0;
+        }
+
+        /* --- 第三/四/五段：通用内容卡片 --- */
+        .content-card h3 {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .content-card h3 .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .content-card ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .content-card li {
+            margin-bottom: 8px;
+        }
+
+        .content-card .code {
+            background-color: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            word-break: break-all;
+        }
+        
+        .content-card .highlight {
+            color: #d9534f; /* 红色高亮 */
+            font-weight: bold;
+        }
+        
+        .content-card .sub-note {
+            font-size: 13px;
+            color: #999;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- 第一段：胶囊标题 -->
+        <div class="title-capsule">
+            <div class="icon">
+                <!-- 替换这里的 src 为您自己的图标图片地址 -->
+                <img src="https://api.iconify.design/mdi:island.svg?color=white" alt="图标">
+            </div>
+            <span>千岛API</span>
+        </div>
+
+        <!-- 第二段：售后群与充值 -->
+        <div class="card">
+            <div class="qq-group-list">
+                <!-- 点击会跳转到加群链接 -->
+                <a href="https://qm.qq.com/cgi-bin/qm/qr?k=YOUR_KEY_1&jump_from=webapi&authKey=YOUR_AUTHKEY_1" target="_blank" class="group-1">
+                    <img src="https://api.iconify.design/ri:qq-fill.svg?color=white" alt="QQ" class="qq-icon">
+                    售后一群 1064364722
+                </a>
+                <a href="https://qm.qq.com/cgi-bin/qm/qr?k=YOUR_KEY_2&jump_from=webapi&authKey=YOUR_AUTHKEY_2" target="_blank" class="group-2">
+                    <img src="https://api.iconify.design/ri:qq-fill.svg?color=white" alt="QQ" class="qq-icon">
+                    售后二群 1034709850
+                </a>
+            </div>
+            <div class="small-text">
+                <p>🎉 入群领 <strong>200额度</strong>！模型若有任何调整或波动，我们会第一时间在群里通知，让大家使用更安心！所以，宝宝们一定要进来一下哦～</p>
+                <p><strong>关于充值:</strong></p>
+                <p>💰 群内找客服直接人工充值</p>
+                <p>🍑 搜索“千岛API”自动发兑换码</p>
+            </div>
+        </div>
+
+        <!-- 第三段：获取令牌 -->
+        <div class="card content-card">
+            <h3>
+                <img src="https://api.iconify.design/mdi:key-chain-variant.svg?color=%234a90e2" alt="令牌" class="icon">
+                获取令牌
+            </h3>
+            <ol>
+                <li>点击左上侧“三”→ <strong>令牌管理</strong></li>
+                <li>显示操作栏，点击 <strong>添加令牌</strong></li>
+                <li>名称随意填写，勾选 <strong>无限额度</strong>，<strong>永不过期</strong>，分组选择 <span class="highlight">千岛酱</span></li>
+            </ol>
+            <p>酒馆、Tavo等端点地址：<br><code class="code">https://qiandao.hkgepi.cn/v1</code></p>
+            <p>小手机、lovemo等端点地址：<br><code class="code">https://qiandao.hkgepi.cn</code></p>
+            <div class="sub-note">
+                💡 以上地址均可国内直接连接使用。
+            </div>
+        </div>
+
+        <!-- 第四段：分组介绍 -->
+        <div class="card content-card">
+            <h3>
+                <img src="https://api.iconify.design/mdi:shape-outline.svg?color=%2350e3c2" alt="分组" class="icon">
+                分组介绍
+            </h3>
+            <p>可选择分组：</p>
+            <ul>
+                <li><strong>千岛酱</strong> —— 默认全模型</li>
+                <li><strong>柠檬酱</strong> —— Gemini专属</li>
+                <li><strong>凯撒酱</strong> —— Claude专属</li>
+                <li><strong>芥末酱</strong> —— Deepseek专属</li>
+                <li><strong>麻辣烫</strong> —— Gemini特殊官转渠道，作为福利，只少量提供</li>
+                <li><strong>石子涟漪</strong> —— Gemini官转，特价0.01（一额度）一次哈基米。每周五开放4000次免费次数。</li>
+            </ul>
+        </div>
+
+        <!-- 第五段：免责声明 -->
+        <div class="card content-card">
+            <h3>
+                <img src="https://api.iconify.design/mdi:shield-check-outline.svg?color=%23f5a623" alt="声明" class="icon">
+                服务声明
+            </h3>
+            <p class="small-text" style="border-top: none; margin-top: 0; padding-top: 0;">
+                请遵守《生成式人工智能服务管理暂行办法》及相关法律法规，本站提供的Google及Claude等API相关资源，仅限合法技术学习与测试用途，严禁任何违反中国及国际法律法规的行为。使用者需自行承担合规责任，本群及资源提供者不承担任何连带责任。
+                <br><br>
+                <!-- 这里可以继续添加其他免责条款 -->
+                所有使用者必须在遵守国家法律法规的前提下使用本服务。
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
