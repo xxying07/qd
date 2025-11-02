@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>千岛API</title>
+    <title>千岛API - 帮助中心</title>
     <style>
         /* --- 全局样式 --- */
         body {
@@ -17,7 +17,12 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            /* 
+             * 【关键修改】
+             * 增加了上下的内边距(padding)，让内容整体上下留出空间，避免被页面固定的头部和底部遮挡。
+             * 您可以根据实际被遮挡的高度，调整 60px 和 40px 这两个值。
+             */
+            padding: 60px 20px 40px 20px; 
         }
 
         /* --- 卡片基础样式 --- */
@@ -50,15 +55,17 @@
             height: 36px;
             margin-right: 15px;
             border-radius: 50%; /* 圆形图标 */
-            background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+            background-color: #ffffff; /* 将背景改为白色，让图标更突出 */
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden; /* 防止图片溢出圆形 */
         }
 
         .title-capsule .icon img {
-            width: 24px; /* 图标大小 */
-            height: 24px;
+            width: 100%; /* 让图片填满圆形容器 */
+            height: 100%;
+            object-fit: cover; /* 保持图片比例，覆盖整个区域 */
         }
 
         /* --- 第二段：QQ群组 --- */
@@ -158,8 +165,7 @@
         <!-- 第一段：胶囊标题 -->
         <div class="title-capsule">
             <div class="icon">
-                <!-- 替换这里的 src 为您自己的图标图片地址 -->
-                <img src="https://api.iconify.design/mdi:island.svg?color=white" alt="图标">
+                <img src="https://i.postimg.cc/7bq2hRGT/image.png" alt="千岛图标">
             </div>
             <span>千岛API</span>
         </div>
@@ -167,12 +173,11 @@
         <!-- 第二段：售后群与充值 -->
         <div class="card">
             <div class="qq-group-list">
-                <!-- 点击会跳转到加群链接 -->
-                <a href="https://qm.qq.com/cgi-bin/qm/qr?k=YOUR_KEY_1&jump_from=webapi&authKey=YOUR_AUTHKEY_1" target="_blank" class="group-1">
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=IyxamkW8ifDynb2jq76tSYSS4q8Y-5SE&authKey=7juIRyXIBFYq3zOEMadFVrFMqbi85g8MofXOjKJprtq2KhcRKsNbBPryHQ4LY7ej&noverify=0&group_code=1064364722" target="_blank" class="group-1">
                     <img src="https://api.iconify.design/ri:qq-fill.svg?color=white" alt="QQ" class="qq-icon">
                     售后一群 1064364722
                 </a>
-                <a href="https://qm.qq.com/cgi-bin/qm/qr?k=YOUR_KEY_2&jump_from=webapi&authKey=YOUR_AUTHKEY_2" target="_blank" class="group-2">
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=OwALvGipS79c9WeOLZDEMY2GBokzbbzb&authKey=A3aDI5do9qOhDg8INexxOcQz0dAA1Xf4sgIe9%2BnyaJc5Xjs9snLI4PMeYw9dhdR8&noverify=0&group_code=1034709850" target="_blank" class="group-2">
                     <img src="https://api.iconify.design/ri:qq-fill.svg?color=white" alt="QQ" class="qq-icon">
                     售后二群 1034709850
                 </a>
@@ -229,7 +234,6 @@
             <p class="small-text" style="border-top: none; margin-top: 0; padding-top: 0;">
                 请遵守《生成式人工智能服务管理暂行办法》及相关法律法规，本站提供的Google及Claude等API相关资源，仅限合法技术学习与测试用途，严禁任何违反中国及国际法律法规的行为。使用者需自行承担合规责任，本群及资源提供者不承担任何连带责任。
                 <br><br>
-                <!-- 这里可以继续添加其他免责条款 -->
                 所有使用者必须在遵守国家法律法规的前提下使用本服务。
             </p>
         </div>
